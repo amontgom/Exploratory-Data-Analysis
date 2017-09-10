@@ -7,5 +7,5 @@ download.file(fileUrl, destfile = temp, mode = "wb") #add a ", method = "curl"" 
 dateDowloaded <- date()
 dateDowloaded
 unzip(temp, "household_power_consumption.txt") #unzips the file, turns it into a readable .txt file
-HPCData <- read.table("household_power_consumption.txt", sep=";", na.strings = "?", header = TRUE) #Note that separation is by semicolons, not commas
+HPCData <- read.table("household_power_consumption.txt", sep=";", na.strings = "?", header = TRUE) #Note that separation is by semicolons, not commas; also note that default "NA" form is "?", so added "na.strings = "?"" to hopefully take care of that
 unlink(temp)
